@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Educacional</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Bem-vindo</h1>
+                <p>Faça login para acessar sua plataforma</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="login-btn">Entrar</button>
+                <div id="loginError" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="appContainer" class="app-container hidden">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>Cozinha Saudavel</h1>
+        </header>
+
+        <!-- Content Sections -->
+        <main class="main-content">
+            <!-- Principal Tab -->
+            <section id="principal" class="tab-content active">
+                <h2>Módulos de Conteúdo</h2>
+                <div class="modules-carousel">
+                    <div class="module-card" data-module="1" data-type="pdf">
+                        <div class="module-image">
+                            <img src="https://i.ibb.co/kVpNV1ZC/20250731-1324-Logo-Bolos-Sem-Gl-ten-simple-compose-01k1gmrb1vfpfr0hn8jq3czxxr.png" alt="10 Bolos sem Glúten" width="280" height="280" style="border-radius: 12px; object-fit: cover;">
+                        </div>
+                        <h3>10 Bolos sem Glúten</h3>
+                        <p>Receitas deliciosas e saudáveis em PDF</p>
+                        <div class="module-type">📄 E-book PDF</div>
+                    </div>
+                    
+                    <div class="module-card" data-module="2">
+                        <div class="module-image">
+                            <img src="https://i.ibb.co/fddwgbKK/OIP-2.jpg" alt="Videos de como fazer o bolo" width="280" height="280" style="border-radius: 12px; object-fit: cover;">
+                        </div>
+                        <h3>Videos de como fazer o bolo</h3>
+                        <p>Aulas práticas em vídeo</p>
+                        <div class="module-type">🎥 Vídeo Aulas</div>
+                    </div>
+                    
+
+                </div>
+
+                <!-- Video Gallery -->
+                <div id="videoGallery" class="video-gallery hidden">
+                    <div class="gallery-header">
+                        <button id="backToModules" class="back-btn">← Voltar aos Módulos</button>
+                        <h3 id="galleryTitle">Vídeos do Módulo</h3>
+                    </div>
+                    <div id="videoGrid" class="video-grid">
+                        <!-- Videos will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Módulos Premium -->
+                <div class="section-header">
+                    <h2>Módulos Premium</h2>
+                    <p>Conteúdos exclusivos para acelerar seu sucesso</p>
+                </div>
+
+                <div class="premium-carousel">
+                    <div class="premium-carousel-container">
+                        <div class="premium-module">
+                            <div class="module-image">
+                                <img src="https://i.ibb.co/nqXTs9dS/20250731-1853-Confeiteira-de-Sucesso-simple-compose-01k1h7h6tpfdt9kgywhg73mr6z.png" alt="Venda seu Bolo sem Gluten">
+                                <div class="lock-overlay">
+                                    <i data-feather="lock" style="width: 48px; height: 48px; color: white;"></i>
+                                </div>
+                            </div>
+                            <h3>Venda seu Bolo sem Gluten</h3>
+                            <p>🔥 TRANSFORME sua paixão por bolos em RENDA EXTRA!</p>
+                            <div class="price">R$ 12,90</div>
+                            <button class="premium-buy-btn" onclick="window.open('https://pay.cakto.com.br/rku6euf_506029', '_blank')">Comprar Agora</button>
+                        </div>
+
+                        <div class="premium-module">
+                            <div class="module-image">
+                                <img src="https://i.ibb.co/05g4Djn/20250731-1903-Ingredientes-M-gicos-Flutuantes-simple-compose-01k1h84t4yf8vvckjb1gym8yzj.png" alt="Ingredientes secretos">
+                                <div class="lock-overlay">
+                                    <i data-feather="lock" style="width: 48px; height: 48px; color: white;"></i>
+                                </div>
+                            </div>
+                            <h3>Ingredientes secretos</h3>
+                            <p>🔐 SEGREDOS REVELADOS! Ingredientes MÁGICOS!</p>
+                            <div class="price">R$ 9,90</div>
+                            <button class="premium-buy-btn" onclick="window.open('https://pay.cakto.com.br/yu4cxrp_506038', '_blank')">Comprar Agora</button>
+                        </div>
+
+                        <div class="premium-module">
+                            <div class="module-image">
+                                <img src="https://i.ibb.co/KxQD8MVK/Image-fx-2.png" alt="Confeiteira IA">
+                                <div class="lock-overlay">
+                                    <i data-feather="lock" style="width: 48px; height: 48px; color: white;"></i>
+                                </div>
+                            </div>
+                            <h3>Confeiteira IA</h3>
+                            <p>🤖 REVOLUÇÃO DIGITAL! Inteligência Artificial exclusiva!</p>
+                            <div class="price">R$ 27,90</div>
+                            <button class="premium-buy-btn" onclick="window.open('https://pay.cakto.com.br/33q9fcy_506042', '_blank')">Comprar Agora</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Mais Conteúdos Tab -->
+            <section id="mais-conteudos" class="tab-content">
+                <h2>Mais Conteúdos</h2>
+                <div class="upsell-container">
+                    <div class="upsell-card" data-checkout="https://pay.cakto.com.br/rku6euf_506029">
+                        <div class="upsell-image">
+                            <img src="https://i.ibb.co/nqXTs9dS/20250731-1853-Confeiteira-de-Sucesso-simple-compose-01k1h7h6tpfdt9kgywhg73mr6z.png" alt="Venda seu Bolo sem Gluten">
+                        </div>
+                        <h3>Venda seu Bolo sem Gluten</h3>
+                        <p>🔥 TRANSFORME sua paixão por bolos em RENDA EXTRA! Descubra os segredos para vender até R$ 3.000/mês com bolos sem glúten!</p>
+                        <div class="price">R$ 12,90</div>
+                    </div>
+
+                    <div class="upsell-card" data-checkout="https://pay.cakto.com.br/yu4cxrp_506038">
+                        <div class="upsell-image">
+                            <img src="https://i.ibb.co/05g4Djn/20250731-1903-Ingredientes-M-gicos-Flutuantes-simple-compose-01k1h84t4yf8vvckjb1gym8yzj.png" alt="Ingredientes secretos para fazer bolo sem gluten">
+                        </div>
+                        <h3>Ingredientes secretos para fazer bolo sem gluten</h3>
+                        <p>🔐 SEGREDOS REVELADOS! Ingredientes MÁGICOS que fazem seus bolos ficarem IRRESISTÍVEIS e venderem como água!</p>
+                        <div class="price">R$ 9,90</div>
+                    </div>
+
+                    <div class="upsell-card" data-checkout="https://pay.cakto.com.br/33q9fcy_506042">
+                        <div class="upsell-image">
+                            <img src="https://i.ibb.co/KxQD8MVK/Image-fx-2.png" alt="Confeiteira IA">
+                        </div>
+                        <h3>Confeiteira IA</h3>
+                        <p>🤖 REVOLUÇÃO DIGITAL! Inteligência Artificial que cria RECEITAS EXCLUSIVAS e AUMENTA suas vendas em 500%!</p>
+                        <div class="price">R$ 27,90</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Configurações Tab -->
+            <section id="configuracoes" class="tab-content">
+                <h2>Configurações</h2>
+                <div class="settings-container">
+                    <div class="setting-item">
+                        <span>Notificações</span>
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <span>Reprodução automática</span>
+                        <label class="toggle">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <span>Qualidade dos vídeos</span>
+                        <select class="setting-select">
+                            <option value="auto">Automático</option>
+                            <option value="720p">720p</option>
+                            <option value="1080p">1080p</option>
+                        </select>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-tab="principal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                </svg>
+                <span>Principal</span>
+            </button>
+
+            <button class="nav-btn" data-tab="mais-conteudos">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>Mais</span>
+            </button>
+            <button class="nav-btn" data-tab="configuracoes">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>Config</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
